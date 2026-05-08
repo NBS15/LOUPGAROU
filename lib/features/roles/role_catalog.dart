@@ -1,0 +1,78 @@
+import 'role.dart';
+
+const roleCatalog = <GameRole>[
+  GameRole(
+    id: 'villager',
+    name: 'Villageois',
+    description: 'Un habitant du village qui cherche à survivre jusqu’à l’aube.',
+    power: 'Aucun pouvoir, mais sa voix compte pendant les débats.',
+    camp: RoleCamp.village,
+    icon: '🏡',
+    nightOrder: 99,
+  ),
+  GameRole(
+    id: 'werewolf',
+    name: 'Loup-Garou',
+    description: 'Prédateur nocturne dissimulé parmi les villageois.',
+    power: 'Se réveille la nuit avec les autres loups pour désigner une victime.',
+    camp: RoleCamp.wolves,
+    icon: '🐺',
+    nightOrder: 10,
+  ),
+  GameRole(
+    id: 'seer',
+    name: 'Voyante',
+    description: 'Gardienne des visions et des secrets.',
+    power: 'Peut découvrir le rôle d’un joueur chaque nuit.',
+    camp: RoleCamp.village,
+    icon: '🔮',
+    nightOrder: 20,
+  ),
+  GameRole(
+    id: 'witch',
+    name: 'Sorcière',
+    description: 'Alchimiste capable d’inverser le destin.',
+    power: 'Possède une potion de vie et une potion de mort pour toute la partie.',
+    camp: RoleCamp.village,
+    icon: '🧪',
+    nightOrder: 30,
+  ),
+  GameRole(
+    id: 'hunter',
+    name: 'Chasseur',
+    description: 'Un tireur implacable qui ne part jamais seul.',
+    power: 'Lorsqu’il meurt, il élimine immédiatement un autre joueur.',
+    camp: RoleCamp.village,
+    icon: '🏹',
+    nightOrder: 99,
+  ),
+  GameRole(
+    id: 'cupid',
+    name: 'Cupidon',
+    description: 'Lie deux âmes au début de la partie.',
+    power: 'Désigne deux amoureux dont les destins sont connectés.',
+    camp: RoleCamp.village,
+    icon: '💘',
+    nightOrder: 1,
+  ),
+  GameRole(
+    id: 'little_girl',
+    name: 'Petite fille',
+    description: 'Une espionne courageuse qui observe le danger.',
+    power: 'Peut tenter d’espionner les loups pendant leur réveil.',
+    camp: RoleCamp.village,
+    icon: '👁️',
+    nightOrder: 11,
+  ),
+  GameRole(
+    id: 'guard',
+    name: 'Garde',
+    description: 'Protecteur silencieux du village.',
+    power: 'Protège un joueur chaque nuit contre l’attaque des loups.',
+    camp: RoleCamp.village,
+    icon: '🛡️',
+    nightOrder: 5,
+  ),
+];
+
+GameRole roleById(String id) => roleCatalog.firstWhere((role) => role.id == id);
